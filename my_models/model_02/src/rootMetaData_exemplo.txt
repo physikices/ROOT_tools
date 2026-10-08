@@ -1,0 +1,84 @@
+# =====================================================================
+# Exemplo: reproduz o layout do plota_modelo (2 painéis)
+# Para um painel só, deixe apenas um bloco (ou omita "painel:").
+# =====================================================================
+
+# ---------------------------- PAINEL ESQUERDO ----------------------------
+painel:
+eixoX: #it{P}_{T} [GeV]
+eixoY: d#sigma/d#it{P}_{T} [nb/GeV]
+xlim: 0 10
+ylim: 1e-5 25
+ndivx: 405
+offy: 1.18
+legenda: 0.575 0.614 0.962 0.920 tam=0.030 moldura=1 | Before tune:
+
+# textos empilhados: o primeiro tem posição, os "+" ficam abaixo (passo)
+passo: 0.037
+texto: 0.185 0.383 | #it{ep} #rightarrow #it{e} #oplus J/#psi X
+texto: + | #sqrt{s_{ep}} = 320 GeV
+texto: + | Q^{2} < 2.5 GeV^{2}
+texto: + | 0.3 < z < 0.9
+texto: + | #langle O_{J/#psi}(^{3}S_{1}^{[1]}) #rangle = 1.79 GeV^{3}, m_{c} = 1.5 GeV
+texto: + | #langle O_{J/#psi}(^{1}S_{0}^{[8]}) #rangle = 0.01 GeV^{3}, m_{c} = 1.6 GeV
+texto: + | CT18NLO
+
+curvas:
+tabela_PT.dat tipo=step serie=ts1_ho cor=#00a6a6 estilo=3 | HO2.6.7: ^{3}S_{1}^{[1]}
+tabela_PT.dat tipo=step serie=ts1_py cor=#00a6a6 estilo=2 | HO2.6.7 + PYTHIA8.310: ^{3}S_{1}^{[1]}
+tabela_PT.dat tipo=step serie=s0_ho  cor=#1a1a9c estilo=2 | HO2.6.7: ^{1}S_{0}^{[8]}
+tabela_PT.dat tipo=step serie=s0_py  cor=#1a1a9c estilo=1 | HO2.6.7 + PYTHIA8.310: ^{1}S_{0}^{[8]}
+tabela_PT.dat tipo=points serie=h1_all cor=kBlack marc=2 tam=1.3 | H1 data: NPB 472 (1996) 3-31,
+legtxt: EPJC 25 (2002) 41-53,
+legtxt: EPJC 68 (2010) 401-420
+tabela_PT.dat tipo=points serie=h1_bsub cor=#8c8c8c marc=2 tam=1.3 | H1 data: b #rightarrow J/#psi subtracted
+
+# ---------------------------- PAINEL DIREITO ----------------------------
+painel:
+eixoX: W_{#gamma p} [GeV]
+eixoY: #sigma [nb]
+xlim: 60 240
+ylim: 1.45 164
+ndivx: 209
+offy: 1.05
+legenda: 0.175 0.734 0.640 0.930 tam=0.030
+
+texto: 0.69 0.895 | #gamma p #rightarrow J/#psi X
+texto: 0.69 0.840 | P_{T}^{J/#psi} > 1 GeV
+texto: 0.69 0.795 | Q^{2} < 2.5 GeV^{2}
+texto: 0.69 0.752 | 0.3 < z < 0.9
+texto: 0.196 0.348 | #langle O_{J/#psi}(^{3}S_{1}^{[1]}) #rangle = 1.79 GeV^{3}, m_{c} = 1.5 GeV
+texto: 0.196 0.295 | #langle O_{J/#psi}(^{1}S_{0}^{[8]}) #rangle = 0.01 GeV^{3}, m_{c} = 1.6 GeV
+texto: 0.196 0.215 | #mu_{R} = #mu_{F} = m_{T}
+texto: 0.196 0.168 | CT18NLO
+
+# curvas 1 e 2 só servem para a banda (oculta=1); a banda é preenchida entre elas
+banda: 1 2 cor=#b8cacb estilo=1001
+
+# exemplo de gaps (descomente se quiser): ficam atrás das curvas
+# gap: -1 1  cor=kBlue-9  estilo=3004 | ALICE
+# gap: 2 4.5 cor=kGreen-7 estilo=3005 | LHCb
+
+curvas:
+tabela_W.dat tipo=step serie=band_lo oculta=1
+tabela_W.dat tipo=step serie=band_hi oculta=1
+tabela_W.dat tipo=points serie=h1_2010 cor=kBlack marc=33 tam=1.5 | H1 data EPJC 68 (2010) 401-420
+tabela_W.dat tipo=step serie=ts1_ho   cor=#00a6a6 estilo=3 | HO2.6.7: ^{3}S_{1}^{[1]}
+tabela_W.dat tipo=step serie=ts1_tune cor=#00a6a6 estilo=4 | HO2.6.7 + PYTHIA8.310 + tune: ^{3}S_{1}^{[1]}
+tabela_W.dat tipo=step serie=s0_ho    cor=#1a1a9c estilo=2 | HO2.6.7: ^{1}S_{0}^{[8]}
+tabela_W.dat tipo=step serie=s0_tune  cor=#1a1a9c estilo=1 | HO2.6.7 + PYTHIA8.310 + tune: ^{1}S_{0}^{[8]}
+
+# =====================================================================
+# FORMATO ANTIGO (painel único, 2 colunas x y) continua funcionando:
+#
+# titulo: #sqrt{s} = 14 [TeV]
+# aux: Auxiliar
+# eixoX: Y
+# eixoY: d#sigma / dY
+# gap: -1 1  cor=kBlue-9  estilo=3004 | ALICE
+# gap: 2 4.5 cor=kGreen-7 estilo=3005 | LHCb
+# banda: 1 2 cor=kGray+1 estilo=3354 | Banda
+# curvas:
+# dados1.dat  #Gamma = 69.0
+# dados2.dat  #Gamma = 0.106
+# =====================================================================

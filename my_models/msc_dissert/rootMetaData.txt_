@@ -1,0 +1,22 @@
+titulo: #sqrt{s}=18.6 [TeV]
+eixoX:  #;Y
+eixoY:  #dd{\sigma}/\dd{Y} 
+
+curvas:
+../plots/LHC_14TeV_arXiv_mod2.dat    #Gamma^{0^{++}}_{\gamma\gamma}=69.0
+../plots/LHC_14TeV_Wolfg_01.dat      #Gamma^{0^{++}}_{\gamma\gamma}=0.106
+../plots/LHC_14TeV_Wolfg_02.dat      #Gamma^{0^{++}}_{\gamma\gamma}=0.245
+../plots/LHC_14TeV_Wolfg_03.dat      #Gamma^{0^{++}}_{\gamma\gamma}=0.149
+../plots/LHC_14TeV_Wolfg_04.dat      #Gamma^{0^{++}}_{\gamma\gamma}=0.688
+../plots/LHC_14TeV_Wolfg_05.dat      #Gamma^{2^{++}}_{\gamma\gamma}=0.088
+../plots/LHC_14TeV_Wolfg_06.dat      #Gamma^{2^{++}}_{\gamma\gamma}=0.217
+../plots/LHC_8.16TeV_arXiv_mod2.dat  #Gamma^{0^{++}}_{\gamma\gamma}=69.0
+../plots/LHC_8.16TeV_Wolfg_01.dat    #Gamma^{0^{++}}_{\gamma\gamma}=0.106
+
+../plots/LHC_5.36TeV_arXiv_mod2.dat  #Gamma^{0^{++}}_{\gamma\gamma}=69.0
+../plots/LHC_5.36TeV_Wolfg_01.dat    #Gamma^{0^{++}}_{\gamma\gamma}=0.106
+../plots/LHC_5.36TeV_Wolfg_02.dat    #Gamma^{0^{++}}_{\gamma\gamma}=0.245
+../plots/LHC_5.36TeV_Wolfg_03.dat    #Gamma^{0^{++}}_{\gamma\gamma}=0.149
+../plots/LHC_5.36TeV_Wolfg_04.dat    #Gamma^{0^{++}}_{\gamma\gamma}=0.688
+../plots/LHC_5.36TeV_Wolfg_05.dat    #Gamma^{2^{++}}_{\gamma\gamma}=0.088
+../plots/LHC_5.36TeV_Wolfg_06.dat    #Gamma^{2^{++}}_{\gamma\gamma}=0.217
